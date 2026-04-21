@@ -1,0 +1,37 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Project {
+  id              String   @id @default(cuid())
+  title           String
+  createdAt       DateTime @default(now())
+  swotAnalysis    Json?    // Stores SWOT object
+  riskEvaluation  Json?    // Stores Risk object
+  submissions     StepSubmission[]
+}
+
+model StepSubmission {
+  id              String   @id @default(cuid())
+  projectId       String
+  stepKey         String   
+  userAnswer      String   @db.Text
+  searchResults   Json?    
+  score           Int      
+  band            String   
+  critiqueItems   Json?    
+  userOverride    Boolean  @default(false) 
+  status          String   @default("draft") 
+  project         Project  @relation(fields: [projectId], references: [id])
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
