@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Send, AlertTriangle, CheckCircle2, Info, Loader2 } from "lucide-react";
+import { Send, AlertTriangle, CheckCircle2, Info, Loader2, BrainCircuit } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
