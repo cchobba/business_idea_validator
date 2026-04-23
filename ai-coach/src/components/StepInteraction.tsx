@@ -180,7 +180,7 @@ export function StepInteraction({ phaseId, onComplete }: StepInteractionProps) {
              <BrainCircuit className="w-12 h-12 text-zinc-700 mb-4" />
              <p className="text-zinc-500 font-medium">Waiting for input...</p>
              <p className="text-xs text-zinc-600 mt-2 max-w-xs">
-               Provide your answer on the left to trigger the AI Co-Founder's scrutiny engine.
+               Provide your answer on the left to trigger the AI Co-Founder&apos;s scrutiny engine.
              </p>
           </div>
         )}
